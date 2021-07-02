@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameObject GameOver;
     
     public static GameController instance;
+
     void Start()
     {
         instance = this;
@@ -22,13 +23,14 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString();
     } 
 
-    public void ShowGameOver ()
+    public void ShowGameOver()
     {
         GameOver.SetActive(true);
     }
 
      public void RestartGame(string levelName)
     {
+        
       SceneManager.LoadScene(levelName); // esse metodo vai reiniciar a cena 
     }
 

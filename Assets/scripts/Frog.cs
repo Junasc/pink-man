@@ -12,6 +12,7 @@ public class Frog : MonoBehaviour
     public Transform rightColisor; // os objetos q fica direita do inimigo
     public Transform leftColisor; //objeto a esquerda do inimigo
     public Transform headPoint; //ponto em cima da cabeça do inimigo, p saber qnd player tocou 
+    public LayerMask layer; //com esse layer , pode selecionar qual tipo de layer o personagem pode bater
 
     private bool colliding; //serve para detectar qnd inimigo tocou na parede  ou n
 
@@ -26,13 +27,17 @@ public class Frog : MonoBehaviour
     void Update()
     {
         rig.velocity = new Vector2(speed, rig.velocity.y); //movimentando o inimigo
-        colliding = Physics2D.Linecast(rightColisor.position , leftColisor.position);
+        colliding = Physics2D.Linecast(rightColisor.position , leftColisor.position, layer);   
 
         /* Physic2D.linecast -> desenha um colisor invisivel em formato de linha em 2 posições na cena
         as posições que estao dentro do parametro.
         */
         if(colliding)
         {
+            transform.localScale = new Vector2(transform.localScale.x * -1f, transform.localScale.y); //invertendo a rotação 
+            // ele começa em positivo , bate em algo , multiplica por -1 fica negativo, bate de novo , fica positivo e sucessivamente
+            speed *= -1f; // faz o sapo virar pra direção contraria 
+            //se for negativo é esquerda , se for positivo direita 
 
         }
 
