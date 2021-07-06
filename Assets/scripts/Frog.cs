@@ -40,7 +40,25 @@ public class Frog : MonoBehaviour
             //se for negativo é esquerda , se for positivo direita 
 
         }
-
-
     }
+
+        void OnCollisionEnter2D(Collision2D col)
+        {
+
+            if(col.gameObject.tag == "Player")
+            {
+                float height =  col.contacts[0].point.y - headPoint.position.y; //checando se o player esta tocando a cabeca do inimigo
+             
+             if(height > 0 ) //se o valor for maior q 0,executa animação morrendo e destroi logo em seguida o inimigo
+             {
+                 col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5, ForceMode2D.Impulse); //faz o player dar um pulinho 
+                 anim.SetTrigger("frogDie"); //animação morrendo
+                 Destroy(gameObject, 0.25f); //destroy para sumir
+             }
+                
+            }
+
+        }
+
+
 }
