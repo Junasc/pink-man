@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 296685196}
   - component: {fileID: 296685195}
   - component: {fileID: 296685197}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Moldura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,10 +1443,10 @@ GameObject:
   m_Component:
   - component: {fileID: 574691456}
   - component: {fileID: 574691455}
-  - component: {fileID: 574691454}
   - component: {fileID: 574691453}
   - component: {fileID: 574691457}
   - component: {fileID: 574691458}
+  - component: {fileID: 574691454}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1475,8 +1475,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &574691454
-BoxCollider2D:
+--- !u!58 &574691454
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1488,19 +1488,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.015434591, y: -0.11178972}
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.72}
-  m_EdgeRadius: 0
+  m_Radius: 0.383129
 --- !u!212 &574691455
 SpriteRenderer:
   m_ObjectHideFlags: 0

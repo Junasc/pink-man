@@ -8,7 +8,7 @@ public class NextLevel : MonoBehaviour
     public string lvlName;
     void OnCollisionEnter2D(Collision2D collision)
 {
-        if (collision.gameObject.tag == "Player" & GameController.instance.totalScore == 100 )
+        if (collision.gameObject.tag == "Player" & GameController.instance.totalScore >= 100 )
         {
             SceneManager.LoadScene(lvlName);
         }
