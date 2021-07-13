@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rig;
     private Animator animacao;
 
+    bool toFloat;
+
 
     void Start() // o que tiver aqui dentro sera chamado 1vez
     {
@@ -64,7 +66,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump")) // input do unity
+        if (Input.GetButtonDown("Jump") & !toFloat) // input do unity
         {
             if (!isJumping)
             {
@@ -111,5 +113,21 @@ public class Player : MonoBehaviour
             isJumping = true;
             animacao.SetBool("jump", false);  //durante pulo , nao ficar com animação de correr junto
         }
+    }
+
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if(collider.gameObject.layer == 10)
+        {
+            toFloat = true; //enqnt estiver no ventilador player não pode pular
+        }
+    }
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.layer == 10)
+        {
+            toFloat = false; //saiu do ventilador ja pode pular novamente
+        }
+        
     }
 }
