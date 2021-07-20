@@ -11,23 +11,31 @@ public class Dialogue : MonoBehaviour
     public LayerMask playerLayer;
     public float radious;
     private DialogueControl dc;
+    bool onRadious; //para checar qnd o personagem tiver dentro do raio
     private void Start()
     {
-        dc = FindObjectOfType<DialogueControl>(); //findObjectType qnd jogo inicia procura objetos q tenham dialogueControl Anexado
+        dc = FindObjectOfType<DialogueControl>(); //findObjectType qnd jogo inicia procura objetos qSpeech tenham dialogueControl Anexado
     }
 
     private void FixedUpdate()
     {
         Interact();
     }
-    
+
     public void Interact()
     {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, radious, playerLayer); //cria area redonda ao redor do NPC
-
-        if(hit != null)
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, radious, playerLayer);
+        if (hit != null)
         {
             dc.Speech(profile, speechTxt, actorName);
         }
+        else
+        {
+            dc.Destroy();
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, radious); //desenha esfera de colisao 
     }
 }
