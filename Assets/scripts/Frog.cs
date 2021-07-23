@@ -47,7 +47,7 @@ public class Frog : MonoBehaviour
         {
             if(col.gameObject.tag == "Player")
     
-            {
+            { 
              float height =  col.contacts[0].point.y - headPoint.position.y; //checando se o player esta tocando a cabeca do inimigo
              if(height > 0 && !playerDestroyed) //se o valor for maior q 0,executa animação morrendo e destroi logo em seguida o inimigo
                 {
@@ -58,7 +58,7 @@ public class Frog : MonoBehaviour
                  //circleCollider2D.enabled = false;
                  rig.bodyType = RigidbodyType2D.Kinematic;
 
-                 Destroy(gameObject, 0.25f); //destroy para sumir
+                 Destroy(col.gameObject, 0.25f); //destroy para sumir
                 } else
                 {
                  playerDestroyed = true;
