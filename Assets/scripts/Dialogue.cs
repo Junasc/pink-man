@@ -33,6 +33,7 @@ public class Dialogue : MonoBehaviour
         {
             dc.Destroy();
         }
+        
     }
     private void OnDrawGizmosSelected()
     {

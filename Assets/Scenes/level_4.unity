@@ -2087,7 +2087,7 @@ GameObject:
   - component: {fileID: 574691457}
   - component: {fileID: 574691458}
   - component: {fileID: 574691459}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2174,7 +2174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574691452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.57, y: 2.65, z: 0}
+  m_LocalPosition: {x: -6.67, y: 2.88, z: 0}
   m_LocalScale: {x: 1.0946499, y: 1.108333, z: 1.0946499}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5066,7 +5066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766862833456045524, guid: 65cedb46a6f7d2645aa6ae3924bda571, type: 3}
       propertyPath: m_Size.y
-      value: 0.18395661
+      value: 0.13091996
       objectReference: {fileID: 0}
     - target: {fileID: 4766862833456045524, guid: 65cedb46a6f7d2645aa6ae3924bda571, type: 3}
       propertyPath: m_Offset.x
@@ -5074,7 +5074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766862833456045524, guid: 65cedb46a6f7d2645aa6ae3924bda571, type: 3}
       propertyPath: m_Offset.y
-      value: 0.06885489
+      value: 0.04233656
       objectReference: {fileID: 0}
     - target: {fileID: 4766862833456045526, guid: 65cedb46a6f7d2645aa6ae3924bda571, type: 3}
       propertyPath: speed

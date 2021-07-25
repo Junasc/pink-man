@@ -58,7 +58,7 @@ public class Frog : MonoBehaviour
                  //circleCollider2D.enabled = false;
                  rig.bodyType = RigidbodyType2D.Kinematic;
 
-                 Destroy(col.gameObject, 0.25f); //destroy para sumir
+                 Destroy(gameObject, 0.25f); //destroy para sumir
                 } else
                 {
                  playerDestroyed = true;
