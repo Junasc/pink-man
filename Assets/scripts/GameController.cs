@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public  Text scoreText;
 
     public GameObject GameOver;
+    public GameObject GameWin; 
     
     public static GameController instance;
 
@@ -26,6 +27,11 @@ public class GameController : MonoBehaviour
     public void ShowGameOver()
     {
         GameOver.SetActive(true);
+    }
+
+    public void ShowGameWin()
+    {
+        GameWin.SetActive(true);
     }
 
      public void RestartGame(string levelName)

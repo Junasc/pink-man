@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Trophy : MonoBehaviour
 {
+   public Transform topPoint;
 
-    
-    void OnColiisionEnter2D(collision2D col )
+    bool playerDestroyed;
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if(GameObject.tag == "Player")
+        if( col.gameObject.tag == "Player")
         {
-            // quando o player tocar na parte de cima do trofeu chamar tela de finalização do jogo
+             float height =  col.contacts[0].point.y - topPoint.position.y;
+             if(height > 0 )
+             {
+                 GameController.instance.ShowGameWin();
+                 playerDestroyed =  true; 
+                 Destroy(col.gameObject);
+             }
         }
     }
 }

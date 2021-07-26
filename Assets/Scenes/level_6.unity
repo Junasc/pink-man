@@ -2389,6 +2389,7 @@ MonoBehaviour:
   totalScore: 0
   scoreText: {fileID: 2083682047}
   GameOver: {fileID: 307634594}
+  GameWin: {fileID: 0}
 --- !u!4 &542372689
 Transform:
   m_ObjectHideFlags: 0
@@ -2691,7 +2692,7 @@ GameObject:
   - component: {fileID: 607105773}
   - component: {fileID: 607105772}
   m_Layer: 0
-  m_Name: backgroundEscuro
+  m_Name: backgroundPurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
