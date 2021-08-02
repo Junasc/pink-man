@@ -6,10 +6,12 @@ using UnityEngine;
 
 {
     private Animator anim;
+    private AudioSource soundTrampoline;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        soundTrampoline = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -18,7 +20,8 @@ using UnityEngine;
         {
            
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 20f), ForceMode2D.Impulse);
-             anim.SetTrigger("jump");
+            soundTrampoline.Play();
+            anim.SetTrigger("jump");
         }
             
     }

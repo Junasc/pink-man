@@ -15,6 +15,7 @@ public class Boss : MonoBehaviour
     private float timer;
     private Animator anim;
     private Rigidbody2D rig;
+    private AudioSource soundBossDie;
     
 
 
@@ -22,18 +23,20 @@ public class Boss : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        soundBossDie = GetComponent<AudioSource>();
+        
     }
 
     void Update()
     {
         if(direita)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime); //movendo para direita
         }
         else
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-
+            transform.Translate(Vector2.left * speed * Time.deltaTime);//movendo para direita
+            
         }
         timer += Time.deltaTime;
         if(timer>= moveTime)
@@ -44,11 +47,11 @@ public class Boss : MonoBehaviour
 
      if(cima)
         {
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
+            transform.Translate(Vector2.up * speed * Time.deltaTime); //movendo para cima
         }
         else
         {
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
+            transform.Translate(Vector2.down * speed * Time.deltaTime); //movendo para baixo
         }
         timer += Time.deltaTime;
         if(timer>= moveTime)
@@ -66,7 +69,7 @@ public class Boss : MonoBehaviour
              if(height > 0 && !playerDestroyed) //se o valor for maior q 0,executa animação morrendo e destroi logo em seguida o inimigo
                 {
                  col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5, ForceMode2D.Impulse); //faz o player dar um pulinho 
-                 
+                 soundBossDie.Play();
                  anim.SetTrigger("SpikeManDie"); //animação morrendo
                  Fruit.SetActive(true);
                  rig.bodyType = RigidbodyType2D.Kinematic;

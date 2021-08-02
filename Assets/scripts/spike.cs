@@ -9,18 +9,19 @@ public class spike : MonoBehaviour
 
     private bool cima = true;
     private float timer;
-
+    
     void Update()
     {
+        
         if(cima) 
         {
            transform.Translate(Vector2.up * speed * Time.deltaTime);
-
+        
         }
         else 
         {
           transform.Translate(Vector2.down * speed * Time.deltaTime);
-
+          
         }
         timer += Time.deltaTime;
 
@@ -31,4 +32,5 @@ public class spike : MonoBehaviour
         }
 
     }
+
  }

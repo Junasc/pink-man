@@ -11,33 +11,25 @@ public class Player : MonoBehaviour
 {
     public float Speed;
     public float JumpForce;
-
     public bool isJumping;
-
     public bool doubleJump;
-
-
+    private AudioSource soundJump;
     private Rigidbody2D rig;
     private Animator animacao;
-
     bool toFloat;
-
 
     void Start() // o que tiver aqui dentro sera chamado 1vez
     {
-
         rig = GetComponent<Rigidbody2D>();
         animacao = GetComponent<Animator>();
-
+        soundJump = GetComponent<AudioSource>();
     }
-
 
     void Update() //oq tiver aqui dentro é chamado a cada frame
     {
         Move(); //chamando metodos
         Jump();
     }
-
 
     void Move()
     {
@@ -46,7 +38,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetAxis("Horizontal") > 0f ) //animação caminhando para direita
         {
-            animacao.SetBool("walk", true);
+            animacao.SetBool("walk", true); 
             transform.eulerAngles = new Vector3(0f,0f,0f);
         }
 
@@ -60,9 +52,7 @@ public class Player : MonoBehaviour
         {
             animacao.SetBool("walk", false); 
         }
-
     }
-
 
     void Jump()
     {
@@ -70,10 +60,10 @@ public class Player : MonoBehaviour
         {
             if (!isJumping)
             {
-
                 rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
-                 animacao.SetBool("jump", true);  //animação para pular
+                soundJump.Play();
+                animacao.SetBool("jump", true);  //animação para pular
                
             }
             else
@@ -81,8 +71,8 @@ public class Player : MonoBehaviour
                 if (doubleJump)
                 {
                     rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
-
                     doubleJump = false;
+                    soundJump.Play();
                 }
             }
 

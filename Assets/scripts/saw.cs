@@ -9,6 +9,12 @@ public class saw : MonoBehaviour
 
     private bool direita = true;
     private float timer;
+    private AudioSource soundSaw ;
+
+    void Start()
+    {
+        soundSaw = GetComponent<AudioSource>();
+    }
 
     void Update()
     {

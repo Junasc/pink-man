@@ -6,6 +6,7 @@ public class BlueMan : MonoBehaviour
 {
     private Rigidbody2D rig;
     private Animator anim; //pq teremos que manipular a animação dele correndo , morrendo 
+    private AudioSource soundBlueMan;
 
     public float speed; //velocidade de movimentação do inimmigo
 
@@ -20,6 +21,7 @@ public class BlueMan : MonoBehaviour
     { 
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        soundBlueMan = GetComponent<AudioSource>();
 
 
     }
@@ -53,12 +55,13 @@ public class BlueMan : MonoBehaviour
                 {
                  col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5, ForceMode2D.Impulse); //faz o player dar um pulinho 
                  speed = 0;
+                 soundBlueMan.Play();
                  anim.SetTrigger("blueDie"); //animação morrendo
                  //boxCollider2D.enabled = false;
                  //circleCollider2D.enabled = false;
                  rig.bodyType = RigidbodyType2D.Kinematic;
 
-                 Destroy(gameObject, 0.25f); //destroy para sumir
+                 Destroy(gameObject, 0.30f); //destroy para sumir
                 } else
                 {
                  playerDestroyed = true;

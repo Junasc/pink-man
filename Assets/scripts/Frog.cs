@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Frog : MonoBehaviour 
 {
-    private Rigidbody2D rig;
-    private Animator anim; //pq teremos que manipular a animação dele correndo , morrendo 
-
     public float speed; //velocidade de movimentação do inimmigo
-
     public Transform rightColisor; // os objetos q fica direita do inimigo
     public Transform leftColisor; //objeto a esquerda do inimigo
     public Transform headPoint; //ponto em cima da cabeça do inimigo, p saber qnd player tocou 
     public LayerMask layer; //com esse layer , pode selecionar qual tipo de layer o personagem pode bater
 
     private bool colliding; //serve para detectar qnd inimigo tocou na parede  ou n
+    private Rigidbody2D rig;
+    private Animator anim; //pq teremos que manipular a animação dele correndo , morrendo 
+    private AudioSource soundFrog;
 
     void Start()
     { 
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-
+        soundFrog = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -53,12 +51,13 @@ public class Frog : MonoBehaviour
                 {
                  col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5, ForceMode2D.Impulse); //faz o player dar um pulinho 
                  speed = 0;
+                 soundFrog.Play();
                  anim.SetTrigger("frogDie"); //animação morrendo
                  //boxCollider2D.enabled = false;
                  //circleCollider2D.enabled = false;
                  rig.bodyType = RigidbodyType2D.Kinematic;
 
-                 Destroy(gameObject, 0.25f); //destroy para sumir
+                 Destroy(gameObject, 0.30f); //destroy para sumir
                 } else
                 {
                  playerDestroyed = true;

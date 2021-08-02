@@ -8,15 +8,15 @@ public class GameController : MonoBehaviour
 {
     public int totalScore;
     public  Text scoreText;
-
     public GameObject GameOver;
-    public GameObject GameWin; 
-    
     public static GameController instance;
+    
+    //private AudioSource soundGameOver;
 
     void Start()
     {
         instance = this;
+       // soundGameOver = GetComponent<AudioSource>();
     }
 
     public void UpdateScoreText()
@@ -26,18 +26,18 @@ public class GameController : MonoBehaviour
 
     public void ShowGameOver()
     {
+        //soundGameOver.Play();
         GameOver.SetActive(true);
     }
 
-    public void ShowGameWin()
-    {
-        GameWin.SetActive(true);
+    public void RestartGame(string levelName)
+    { 
+      SceneManager.LoadScene(levelName); // esse metodo vai reiniciar a cena 
     }
 
-     public void RestartGame(string levelName)
+    public void Exit()
     {
-        
-      SceneManager.LoadScene(levelName); // esse metodo vai reiniciar a cena 
+        Application.Quit();
     }
 
 }
