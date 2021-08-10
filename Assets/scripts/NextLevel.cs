@@ -10,8 +10,7 @@ public class NextLevel : MonoBehaviour
 
     void Start()
     {  
-        soundNextLevel = GetComponent<AudioSource>(); 
-        
+        soundNextLevel = GetComponent<AudioSource>();    
         
     }
     void OnCollisionEnter2D(Collision2D collision) 
@@ -22,7 +21,6 @@ public class NextLevel : MonoBehaviour
             soundNextLevel.Play();
             Destroy(gameObject,0.10f);
             SceneManager.LoadScene(lvlName);
-
         }
     
     }

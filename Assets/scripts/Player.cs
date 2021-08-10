@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
                 doubleJump = true;
                 soundJump.Play();
                 animacao.SetBool("jump", true);  //animação para pular
-               
+            
             }
             else
             {
@@ -75,8 +75,6 @@ public class Player : MonoBehaviour
                     soundJump.Play();
                 }
             }
-
-
         }
     }
 
@@ -118,6 +116,5 @@ public class Player : MonoBehaviour
         {
             toFloat = false; //saiu do ventilador ja pode pular novamente
         }
-        
     }
 }

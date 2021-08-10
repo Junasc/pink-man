@@ -36,5 +36,4 @@ public class saw : MonoBehaviour
             timer = 0f;
         }
     }
-
 }

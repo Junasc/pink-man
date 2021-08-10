@@ -18,11 +18,9 @@ using UnityEngine;
     {
         if(collision.gameObject.tag == "Player")
         {
-           
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 20f), ForceMode2D.Impulse);
             soundTrampoline.Play();
             anim.SetTrigger("jump");
         }
-            
     }
 }

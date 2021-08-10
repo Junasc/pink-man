@@ -35,8 +35,7 @@ public class Frog : MonoBehaviour
             transform.localScale = new Vector2(transform.localScale.x * -1f, transform.localScale.y); //invertendo a rotação 
             // ele começa em positivo , bate em algo , multiplica por -1 fica negativo, bate de novo , fica positivo e sucessivamente
             speed *= -1f; // faz o sapo virar pra direção contraria 
-            //se for negativo é esquerda , se for positivo direita 
-
+            //se for negativo é esquerda , se for positivo direita
         }
     }
 
@@ -64,8 +63,6 @@ public class Frog : MonoBehaviour
                  GameController.instance.ShowGameOver();
                  Destroy(col.gameObject);
                 }
-                
             }
        }
-
 }

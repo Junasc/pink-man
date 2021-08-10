@@ -14,7 +14,6 @@ public class falling_Plataform : MonoBehaviour
     {
         target = GetComponent<TargetJoint2D>();
         boxColl = GetComponent<BoxCollider2D>();
-        
     }
 
  void OnCollisionEnter2D(Collision2D collision)

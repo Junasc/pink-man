@@ -17,7 +17,6 @@ public class Fruit : MonoBehaviour
         soundCollected = GetComponent<AudioSource>();
     }
 
-    
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag =="Player")
         {

@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class DialogueControl : MonoBehaviour
 {
-    //[Header("components")]
     public GameObject dialogueObj; //dialogueobj é a janela do dialogo
 
     public Image profile;
     public Text speechText;
     public Text actorNameText;
-
-   // [Header("Settings")]
       
     public void Speech(Sprite p, string txt, string actorName) //metodo q o npc vai chamar para chamar o dialogo
     {
@@ -26,5 +23,4 @@ public class DialogueControl : MonoBehaviour
     {
         dialogueObj.SetActive(false); //desativar o dialogo
     }    
-    
 }

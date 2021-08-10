@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement ;   
+using UnityEngine.SceneManagement;   
 
 public class GameController : MonoBehaviour
 {
@@ -10,13 +10,16 @@ public class GameController : MonoBehaviour
     public  Text scoreText;
     public GameObject GameOver;
     public static GameController instance;
-    
-    //private AudioSource soundGameOver;
+    public AudioSource soundMusic;
+    public AudioSource soundGameOver;
+
 
     void Start()
     {
         instance = this;
-       // soundGameOver = GetComponent<AudioSource>();
+        soundMusic = GetComponent<AudioSource>();
+        soundGameOver = GetComponent<AudioSource>();
+
     }
 
     public void UpdateScoreText()
@@ -26,20 +29,20 @@ public class GameController : MonoBehaviour
 
     public void ShowGameOver()
     {
-        //soundGameOver.Play();
         GameOver.SetActive(true);
+        soundGameOver.Play();
+         
     }
 
-    public void RestartGame(string levelName)
-    { 
+    public void RestartGame(string levelName){
       SceneManager.LoadScene(levelName); // esse metodo vai reiniciar a cena 
+     
     }
 
     public void Exit()
     {
         Application.Quit();
     }
-
 }
 
 

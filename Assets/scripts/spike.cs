@@ -30,7 +30,5 @@ public class spike : MonoBehaviour
             cima = !cima;
             timer = 0f;
         }
-
     }
-
  }

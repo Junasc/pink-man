@@ -6,6 +6,7 @@ TagManager:
   tags:
   - trap
   - Moldura
+  - stopMusic
   layers:
   - Default
   - TransparentFX

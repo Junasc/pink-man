@@ -12,12 +12,13 @@ public class Dialogue : MonoBehaviour
     public float radious;
     private DialogueControl dc;
     bool onRadious; //para checar qnd o personagem tiver dentro do raio
+
     private void Start()
     {
         dc = FindObjectOfType<DialogueControl>(); //findObjectType qnd jogo inicia procura objetos qSpeech tenham dialogueControl Anexado
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() 
     {
         Interact();
     }
@@ -33,7 +34,6 @@ public class Dialogue : MonoBehaviour
         {
             dc.Destroy();
         }
-        
     }
     private void OnDrawGizmosSelected()
     {
