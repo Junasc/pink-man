@@ -31,7 +31,6 @@ public class GameController : MonoBehaviour
     {
         GameOver.SetActive(true);
         soundGameOver.Play();
-         
     }
 
     public void RestartGame(string levelName){

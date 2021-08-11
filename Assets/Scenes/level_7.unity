@@ -436,36 +436,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &294516996
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 294516997}
-  m_Layer: 0
-  m_Name: topPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &294516997
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294516996}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.026, y: 0.016, z: -0.14483719}
-  m_LocalScale: {x: 0.47191536, y: 0.36744615, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1043489314}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296685193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -68.9, y: 11.5}
+  m_AnchoredPosition: {x: -74.6, y: 18}
   m_SizeDelta: {x: 88.4219, y: 38.9321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449983339
@@ -2003,6 +1973,7 @@ MonoBehaviour:
   scoreText: {fileID: 2083682047}
   GameOver: {fileID: 404712077}
   soundMusic: {fileID: 0}
+  soundGameOver: {fileID: 0}
 --- !u!4 &542372689
 Transform:
   m_ObjectHideFlags: 0
@@ -2429,6 +2400,7 @@ MonoBehaviour:
   JumpForce: 10
   isJumping: 0
   doubleJump: 1
+  animacao: {fileID: 0}
 --- !u!95 &574691458
 Animator:
   serializedVersion: 3
@@ -2628,7 +2600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.52, y: -112}
+  m_AnchoredPosition: {x: 70.5, y: -111.2}
   m_SizeDelta: {x: 409.2, y: 127.9949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765233960
@@ -2669,6 +2641,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765233958}
   m_CullTransparentMesh: 1
+--- !u!1 &787080690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 787080691}
+  - component: {fileID: 787080692}
+  m_Layer: 12
+  m_Name: colisorTrophy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &787080691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787080690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1043489314}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &787080692
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787080690}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.002033025, y: -0.15923336}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3209349, y: 0.3452677}
+  m_EdgeRadius: 0
 --- !u!1 &788063883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,9 +2957,9 @@ GameObject:
   - component: {fileID: 1043489314}
   - component: {fileID: 1043489313}
   - component: {fileID: 1043489312}
-  - component: {fileID: 1043489315}
   - component: {fileID: 1043489316}
-  m_Layer: 0
+  - component: {fileID: 1043489315}
+  m_Layer: 12
   m_Name: Trophy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3018,7 +3047,7 @@ Transform:
   m_LocalPosition: {x: 3.49, y: -0.1, z: 0}
   m_LocalScale: {x: 3.0989807, y: 4.3469977, z: 1}
   m_Children:
-  - {fileID: 294516997}
+  - {fileID: 787080691}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3035,7 +3064,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0036095157, y: -0.12646113}
+  m_Offset: {x: 0.0020427853, y: 0.03552308}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3046,7 +3075,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45952523, y: 0.38707772}
+  m_Size: {x: 0.28801534, y: 0.038839683}
   m_EdgeRadius: 0
 --- !u!114 &1043489316
 MonoBehaviour:
@@ -3060,7 +3089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b105ee327a31fc4da51c9d5d7bbd7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topPoint: {fileID: 294516997}
+  topPoint: {fileID: 0}
 --- !u!1 &1175462282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,7 +5214,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2116304919050394148, guid: 4435bb0e3ec07164f8cc93a0de491869, type: 3}
       propertyPath: speechTxt
-      value: "Parab\xE9ns! voc\xEA concluiu sua miss\xE3o !"
+      value: "Parab\xE9ns! voc\xEA concluiu sua miss\xE3o! Aqui est\xE1 seu pr\xEAmio,
+        pode entrar."
       objectReference: {fileID: 0}
     - target: {fileID: 2116304919050394148, guid: 4435bb0e3ec07164f8cc93a0de491869, type: 3}
       propertyPath: playerLayer.m_Bits
@@ -5442,15 +5472,15 @@ RectTransform:
   m_GameObject: {fileID: 2108398501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25833008, y: 0.24106386, z: 0.3128241}
+  m_LocalScale: {x: 0.24541357, y: 0.22901067, z: 0.2971829}
   m_Children: []
   m_Father: {fileID: 765233959}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8262, y: -21.195}
-  m_SizeDelta: {x: 607.326, y: 193.82}
+  m_AnchoredPosition: {x: 25.4147, y: -8.7851}
+  m_SizeDelta: {x: 948.2908, y: 195.5768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108398503
 MonoBehaviour:
@@ -5479,13 +5509,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 58
-    m_Alignment: 1
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Parab\xE9ns! voc\xEA concluiu sua miss\xE3o !"
+  m_Text: 
 --- !u!222 &2108398504
 CanvasRenderer:
   m_ObjectHideFlags: 0

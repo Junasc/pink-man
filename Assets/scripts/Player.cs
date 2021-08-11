@@ -1,10 +1,6 @@
 using System.Collections;
-
 using System.Collections.Generic;
-
 using UnityEngine;
-
-
 
 public class Player : MonoBehaviour
 
@@ -13,9 +9,10 @@ public class Player : MonoBehaviour
     public float JumpForce;
     public bool isJumping;
     public bool doubleJump;
+    public static Player instance;
     private AudioSource soundJump;
     private Rigidbody2D rig;
-    private Animator animacao;
+    public Animator animacao;
     bool toFloat;
 
     void Start() // o que tiver aqui dentro sera chamado 1vez
@@ -23,6 +20,7 @@ public class Player : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         animacao = GetComponent<Animator>();
         soundJump = GetComponent<AudioSource>();
+        instance = this;
     }
 
     void Update() //oq tiver aqui dentro é chamado a cada frame
@@ -91,8 +89,12 @@ public class Player : MonoBehaviour
             GameController.instance.ShowGameOver(); //chamar tela game over quando tocar na armadilha
             Destroy(gameObject); 
         }
+        // if(collision.gameObject.layer == 12)
+        // {
+        //     animacao.SetBool("win", true);
+        //     Destroy(gameObject, 0.20f);
+        // }
     }
-
 
     void OnCollisionExit2D(Collision2D collision)
     {
