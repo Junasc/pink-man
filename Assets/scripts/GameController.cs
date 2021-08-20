@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public AudioSource soundMusic;
     public AudioSource soundGameOver;
+    public GameObject MenuEsc; 
+    private bool isPaused;
 
 
     void Start()
@@ -19,9 +21,36 @@ public class GameController : MonoBehaviour
         instance = this;
         soundMusic = GetComponent<AudioSource>();
         soundGameOver = GetComponent<AudioSource>();
+        Time.timeScale = 1f;
 
     }
 
+    public void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            PauseScreen();
+        }
+    }
+
+    public void PauseScreen()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            Time.timeScale = 1f;
+
+            MenuEsc.SetActive(false);
+        }
+        else
+        {
+            isPaused = true;
+            Time.timeScale = 0f;
+            MenuEsc.SetActive(true);
+        }
+
+    }
+   
     public void UpdateScoreText()
     {
         scoreText.text = totalScore.ToString();
@@ -33,7 +62,15 @@ public class GameController : MonoBehaviour
         soundGameOver.Play();
     }
 
-    public void RestartGame(string levelName){
+    // public void ShowMenuEsc()
+    // {
+    //      MenuEsc.SetActive(true); 
+           
+    // }
+   
+
+    public void RestartGame(string levelName)
+    {
       SceneManager.LoadScene(levelName); // esse metodo vai reiniciar a cena 
      
     }
