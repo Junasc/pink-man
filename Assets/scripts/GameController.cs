@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;   
+using UnityEngine.SceneManagement; 
+using System.Linq;
 
 public class GameController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameController : MonoBehaviour
     public AudioSource soundGameOver;
     public GameObject MenuEsc; 
     private bool isPaused;
+    private string[] scenesWithoutMenu = { "MainMenu", "credits", "HowToPlay" };
 
 
     void Start()
@@ -27,7 +29,9 @@ public class GameController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        Scene scene = SceneManager.GetActiveScene();
+        
+        if (Input.GetButtonDown("Cancel") && !scenesWithoutMenu.Contains(scene.name))
         {
             PauseScreen();
         }
@@ -61,13 +65,6 @@ public class GameController : MonoBehaviour
         GameOver.SetActive(true);
         soundGameOver.Play();
     }
-
-    // public void ShowMenuEsc()
-    // {
-    //      MenuEsc.SetActive(true); 
-           
-    // }
-   
 
     public void RestartGame(string levelName)
     {
