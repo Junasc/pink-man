@@ -18,7 +18,13 @@ Meu objetivo com este jogo é conhecer a engine Unity e a linguagem c#.
 
 ## 👨‍🏫 Exemplo de uso
 
+<p align="center" style="width: 500px">
+  <img src=".github/pinkmanimage1.JPG">
+</p>
 
+<p align="center" style="width: 500px">
+  <img src=".github/pinkmanimage2.JPG">
+</p>
 
 
 ## 👨🏼‍💻 Autor
