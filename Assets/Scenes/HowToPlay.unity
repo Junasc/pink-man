@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tecla de espa\xE7o para pulo"
+  m_Text: "W ou   \u2191  para pular"
 --- !u!222 &69023037
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4467,7 +4467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Espa\xE7o 2x  para pulo duplo"
+  m_Text: 2x para pulo duplo
 --- !u!222 &1865112915
 CanvasRenderer:
   m_ObjectHideFlags: 0
