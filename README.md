@@ -18,6 +18,8 @@ Meu objetivo com este jogo é conhecer a engine Unity e a linguagem c#.
 
 ## 👨‍🏫 Exemplo de uso
 
+Link para jogar versão web: https://junasc.github.io/pink-man/
+
 <p align="center" style="width: 500px">
   <img src=".github/pinkmanimage1.JPG">
 </p>
