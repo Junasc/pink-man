@@ -1,11 +1,6 @@
 # Game Pink Man
 > Plataforma 2D.
 
-[![Code Size][code-size]][code-url]
-[![License][MIT-license]][MIT-url]
-[![Realese][version]][version-url]
-Assests by unity assets store
-Sounds by Fresound.org
 
 
 ## 🎯 Objetivo
