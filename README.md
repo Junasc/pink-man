@@ -36,7 +36,7 @@ Confira a página [CONTRIBUTING](.github/CONTRIBUTING-PT-BR.md) para ver os melh
 
 ## 📃 Licença
 
-Lançado em 2020.
+Lançado em 2021.
 Este projeto está sob a [Licença MIT](./LICENSE.md).
 
 ---
